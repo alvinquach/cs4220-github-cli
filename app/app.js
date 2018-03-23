@@ -35,8 +35,13 @@ const showRepo = (result) => {
         result.forEach(repo => {
             if (answer.repo == repo.id) {
                 console.log(`------Information of ${repo.name}------`)
-                console.log(`Name: ${repo.name}`)
-                console.log(`Description: ${repo.description}`)
+                console.log(`Name: \t\t\t${repo.name}`)
+                console.log(`Created on: \t\t${repo.created_at}`)
+                console.log(`Owner: \t\t\t${repo.owner.login}`)
+                console.log(`Description: \t\t${repo.description}`)
+                console.log(`URL: \t\t\t${repo.html_url}`)
+                console.log(`Fork Count: \t\t${repo.forks_count}`)
+                console.log(`Size: \t\t\t${repo.size}`)
             }
         })
     })
