@@ -11,3 +11,9 @@ const _fetch = (command) => {
 exports.search = (username) => {
     return _fetch(`users/${username}/repos`)
 }
+
+exports.runGetUrl = (getUrl, paramName = "", paramValue = "") =>  {
+    return superagent.get(getUrl.replace(paramName, paramValue))
+        .then(response => response.body)
+        .catch(error => error.response.body)
+}
