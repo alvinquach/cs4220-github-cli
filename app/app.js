@@ -5,6 +5,10 @@ const
 const search = (username) => {
     git.search(username)
         .then(result => {
+            if (!result) {
+                console.log("Username does not exist.");
+                return;
+            }
             console.log();            
             console.log(`------ Repositores owned by ${username} ------`)
             showRepos(result)
@@ -29,7 +33,7 @@ const showRepos = (result) => {
         const repo = answer.repo;
 
         // Get the branches
-        git.runGetUrl(repo.branches_url, "{/branch}")
+        git.branches(repo.owner.login, repo.name)
             .then (result =>  printRepo(repo, result))
             .catch(err => console.log(err))
 
