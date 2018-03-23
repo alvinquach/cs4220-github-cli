@@ -3,16 +3,11 @@ const
     inquirer = require('inquirer')
 
 
-// HINT for #4 in Lab
 const search = (username) => {
     git.search(username)
         .then(result => {
-            console.log(`----Repos of ${username}----`)
-            //  let i = 1;
-            //  result.forEach(repo => {
-            //      console.log(i + '. ' + repo.name + " "  + repo.id)
-            //      i++
-            // });
+            console.log();            
+            console.log(`------ Repositores owned by ${username} ------`)
             showRepo(result)
         })
         .catch(err => console.log(err))
@@ -34,7 +29,8 @@ const showRepo = (result) => {
     .then (answer => {
         result.forEach(repo => {
             if (answer.repo == repo.id) {
-                console.log(`------Information of ${repo.name}------`)
+                console.log();
+                console.log(`------ Information for ${repo.name} ------`)
                 console.log(`Name: \t\t\t${repo.name}`)
                 console.log(`Created on: \t\t${repo.created_at}`)
                 console.log(`Owner: \t\t\t${repo.owner.login}`)
