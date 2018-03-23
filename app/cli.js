@@ -1,8 +1,7 @@
-const chalk = require('chalk')
-
 const
     app = require('./app'),
     yargs = require('yargs')
+    chalk = require('chalk')
 
 
 const flags = yargs.usage('$0: Usage <cmd> [options]')
