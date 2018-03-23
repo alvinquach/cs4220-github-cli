@@ -9,6 +9,7 @@
   "author": "Teky Alvarado, Jose Gonzalez, Saba Mahbub, Safa Mahbub, Alvin Quach",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^2.3.2",
     "inquirer": "^5.1.0",
     "superagent": "^3.8.2",
     "yargs": "^11.0.0"
