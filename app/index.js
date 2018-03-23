@@ -13,7 +13,7 @@ exports.search = (username) => {
 }
 
 exports.branches = (username, repo) =>  {
-    return superagent.get(`${url}/repos/${username}/${repo}/branches`)
+    return superagent.get(`${config.url}/repos/${username}/${repo}/branches`)
         .then(response => response.body)
         .catch(error => error.body)
 }
