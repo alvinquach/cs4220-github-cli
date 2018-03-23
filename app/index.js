@@ -12,12 +12,8 @@ exports.search = (username) => {
     return _fetch(`users/${username}/repos`)
 }
 
-
-exports.searchFurthur = (username, repo) => {
-    return _fetch(`/search/repositories/?q=${repo}`)
-    //     .then(response => response.body)
-    //     .catch(error => error.response.body)
-
-    // console.log(username)
-    // return _fetch(`users/${username}/${repo}`)
+exports.runGetUrl = (getUrl, paramName = "", paramValue = "") =>  {
+    return superagent.get(getUrl.replace(paramName, paramValue))
+        .then(response => response.body)
+        .catch(error => error.response.body)
 }

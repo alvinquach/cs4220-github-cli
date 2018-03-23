@@ -6,14 +6,8 @@ const
 const flags = yargs.usage('$0: Usage <cmd> [options]')
     .command({
         command: 'search',
-        desc: 'gets repos of user searched',
-        builder: (yargs) => {
-            return yargs.option('u', {
-                alias: 'username',
-                describe: 'find repos of given username'
-            })
-        },
-        handler: (argv) => { app.search(argv.username) }
+        desc: `Search for repositories by owner's username.`,
+        handler: (argv) => { app.search(argv._[1]) }
     })
     .help('help')
     .argv
