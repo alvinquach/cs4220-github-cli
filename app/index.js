@@ -1,9 +1,9 @@
 const
      superagent = require('superagent')
-     url = "https://api.github.com"
+     config = require('./config')
 
 const _fetch = (command) => {
-    return superagent.get(`${url}/${command}`)
+    return superagent.get(`${config.url}/${command}`)
         .then(response => response.body)
         .catch(error => error.response.body)
 }
