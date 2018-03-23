@@ -7,7 +7,7 @@ const search = (username) => {
     git.search(username)
         .then(result => {
             if (!result) {
-                console.log("Username does not exist.");
+                console.log(clalk.red("Username does not exist."));
                 return;
             }
             console.log();            
