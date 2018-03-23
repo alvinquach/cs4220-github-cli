@@ -16,8 +16,4 @@ exports.runGetUrl = (getUrl, paramName = "", paramValue = "") =>  {
     return superagent.get(getUrl.replace(paramName, paramValue))
         .then(response => response.body)
         .catch(error => error.response.body)
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> c5a3fb5fea65a87283088cccd2dc07c04c7c1656
