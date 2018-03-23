@@ -11,3 +11,13 @@ const _fetch = (command) => {
 exports.search = (username) => {
     return _fetch(`users/${username}/repos`)
 }
+
+
+exports.searchFurthur = (username, repo) => {
+    return _fetch(`/search/repositories/?q=${repo}`)
+    //     .then(response => response.body)
+    //     .catch(error => error.response.body)
+
+    // console.log(username)
+    // return _fetch(`users/${username}/${repo}`)
+}
