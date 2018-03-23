@@ -1,12 +1,12 @@
 {
   "name": "github-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "CS4220 Spring 2018 Midterm - Github API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Teky Alvarado, Jose Gonzalez, Saba Mahbub, Safa Mahbub, Alvin Quach",
   "license": "ISC",
   "dependencies": {
     "inquirer": "^5.1.0",
