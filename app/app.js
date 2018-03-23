@@ -20,7 +20,7 @@ const search = (username) => {
 const showRepos = (result) => {
     return inquirer.prompt([{
         type: 'list',
-        message: 'The Repo to search:',
+        message: 'Select a repo to diplay more information:',
         name: 'repo',
         choices: () => {
             let repos = []
