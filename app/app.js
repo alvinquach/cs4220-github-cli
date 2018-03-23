@@ -4,8 +4,8 @@ const
 
 
 // HINT for #4 in Lab
-const getRepos = (username) => {
-    git.getRepos(username)
+const search = (username) => {
+    git.search(username)
         .then(result => {
             console.log(`----Repos of ${username}----`)
             let i = 1;
@@ -18,6 +18,5 @@ const getRepos = (username) => {
 }
 
 module.exports = {
-    getRepos
+    search
 }
-

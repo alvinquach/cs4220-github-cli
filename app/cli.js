@@ -5,15 +5,15 @@ const
 
 const flags = yargs.usage('$0: Usage <cmd> [options]')
     .command({
-        command: 'getRepo',
-        desc: 'gets repo of user',
+        command: 'search',
+        desc: 'gets repos of user searched',
         builder: (yargs) => {
             return yargs.option('u', {
                 alias: 'username',
                 describe: 'find repos of given username'
             })
         },
-        handler: (argv) => { app.getRepos(argv.username) }
+        handler: (argv) => { app.search(argv.username) }
     })
     .help('help')
     .argv

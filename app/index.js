@@ -8,6 +8,6 @@ const _fetch = (command) => {
         .catch(error => error.response.body)
 }
 
-exports.getRepos = (username) => {
+exports.search = (username) => {
     return _fetch(`users/${username}/repos`)
 }
