@@ -41,7 +41,7 @@ const showRepo = (result) => {
                 console.log(`Description: \t\t${repo.description}`)
                 console.log(`URL: \t\t\t${repo.html_url}`)
                 console.log(`Fork Count: \t\t${repo.forks_count}`)
-                console.log(`Size: \t\t\t${repo.size}`)
+                console.log(`Repo Size: \t\t${repo.size} KB`)
             }
         })
     })
