@@ -10,6 +10,10 @@ const search = (username) => {
                 console.log(chalk.red("Username does not exist."));
                 return;
             }
+            if (!result.lenght) {
+                console.log(chalk.yellow(`${username} does not have any repositories.`));
+                return;
+            }
             console.log();            
             console.log(`------ Repositores owned by ${username} ------`)
             showRepos(result)
@@ -22,20 +26,14 @@ const showRepos = (result) => {
         type: 'list',
         message: 'Select a repo to diplay more information:',
         name: 'repo',
-        choices: () => {
-            let repos = []
-            result.forEach(repo => {
-                repos.push({name: repo.name, value: repo})
-            })
-            return repos
-        }
+        choices: () => result.map(repo => ({name: repo.name, value: repo}))
     }])
     .then (answer => {
         const repo = answer.repo;
 
         // Get the branches
         git.branches(repo.owner.login, repo.name)
-            .then (result =>  printRepo(repo, result))
+            .then(result => printRepo(repo, result))
             .catch(err => console.log(err))
 
     })

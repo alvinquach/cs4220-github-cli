@@ -2,14 +2,10 @@ const
      superagent = require('superagent')
      config = require('./config')
 
-const _fetch = (command) => {
-    return superagent.get(`${config.url}/${command}`)
+exports.search = (username) => {
+    return superagent.get(`${config.url}/users/${username}/repos`)
         .then(response => response.body)
         .catch(error => error.body)
-}
-
-exports.search = (username) => {
-    return _fetch(`users/${username}/repos`)
 }
 
 exports.branches = (username, repo) =>  {
