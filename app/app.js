@@ -10,7 +10,7 @@ const search = (username) => {
                 console.log(chalk.red("Username does not exist."));
                 return;
             }
-            if (!result.lenght) {
+            if (!result.length) {
                 console.log(chalk.yellow(`${username} does not have any repositories.`));
                 return;
             }
